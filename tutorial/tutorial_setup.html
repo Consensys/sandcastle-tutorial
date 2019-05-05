@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body><link href="style.css" rel="stylesheet"></link>
+		<h1 id="sandcastle-smart-contract-tutorial">Sandcastle Smart Contract Tutorial</h1>
+		<p>The following steps lead a user who knows only SQL to write, deploy, and interact with an Ethereum smart contract using Remix. </p>
+		<p>Some insights into the reasoning behind our bridging of Ethereum and database technologies can be found in the following articles. </p><a href="https://media.consensys.net/blockchains-and-databases-arent-the-same-thing-yet-5d5eb7df099e" target="new">Blockchains and Databases Aren’t the Same Thing. Yet.</a><br>When the Ethereum mainnet reaches block 10 million, they will be. Here’s why.
+		<h1 id="setup">Setup</h1>
+		<p>Go to 
+			<a href="http://remix.ethereum.org">http://remix.ethereum.org</a>, then navigate to the 
+			<code>Settings</code> panel (on the right side of the Remix web page).
+		</p>
+		<p>As shown below, copy the following Sandcastle plugin definition into the text area. Then, press the 
+			<code>Load</code> button to add the Sandcastle plugin button.
+		</p>
+		<pre><code>{
+  "title": "Sandcastle",
+  "url": "http://3.95.3.208:4567"
+}</code></pre>
+		<p>This is what it looks like.</p><figure><img src="./tutorial_setup_01.png" width="400" alt="Image showing to enter plugin information in the text area."/><figcaption>Figure: Load Sandcastle plugin.</figcaption></figure>
+		<p>Pressing the new button will show the Sandcastle panel.</p><figure><img src="./tutorial_setup_02.png" width="400" alt="Image showing Sandcastle panel."><figcaption>Figure: Sandcastle Remix plugin panel.</figcaption></figure>
+		<h1 id="load-an-example-smart-contract">Load an example smart contract</h1>
+		<p>Press on one of the example smart contracts in the panel, for example, pick 'selects'.</p>
+		<p>A file should appear in the left panel named 'selects.sql'. Clicking on the file will show content like the following.</p><figure><img src="./tutorial_setup_03.png" width="400" alt="Image showing example Sandcastle SQL smart contract."/><figcaption>Figure: Example Sandcastle SQL smart contract.</figcaption></figure>
+		<h1 id="compile-a-smart-contract">Compile a smart contract</h1>
+		<p>In order to use the Sandcastle web service to translate SQL into Solidity, click on the 'Submit' button at the top of the panel. The button send the SQL code of the currently selected file, and generates a corresponding file with the added extension '.sol'. Successfully generating an output file will have a Compiler message as follows.</p><figure><img src="./tutorial_setup_04.png" width="400" alt="Image showing example Sandcastle compilation message."/><figcaption>Figure: Compilation message.</figcaption></figure>
+		<p>Click on the newly generated file (which should have appeared to the left). For this example, the code looks as follows.
+			When Solidity source is viewed, the panel reacts to compilation results (including automatic compilation) with red (error) or green (success).</p><figure><img src="./tutorial_setup_05.png" width="400" alt="Image showing example Sandcastle compilation result."/><figcaption>Figure: Compilation result.</figcaption></figure>
+		<h1 id="deploy-a-smart-contract">Deploy a smart contract</h1>
+		<p>A Sandcastle smart contract is deployed like other smart contracts in Remix. </p>
+		<p>After compiling a Solidity smart contract, navigate to the 'Run' tab. Ensure that the 
+			<code>body</code> smart contract is selected, then click on deploy. If a Sandcastle smart contract does not deploy successfully, try increasing the gas limit. 
+		</p><figure><img src="./tutorial_setup_06.png" width="300" alt="Image showing example Remix deployment panel and gas panel."/><figcaption>Figure: Remix deployment panel and gas panel.</figcaption></figure>
+		<h1 id="sandcastle-smart-contract-functions">Sandcastle smart contract functions</h1>
+		<p>The following figure shows the functions defined on the selects example smart contract.</p><figure><img src="./tutorial_setup_07.png" width="300" alt="Image showing example Sandcastle example functions."/><figcaption>Figure: Example smart contract functions.</figcaption></figure><figure><img src="./tutorial_setup_03.png" width="400" alt="Image showing example Sandcastle SQL smart contract."/><figcaption>Figure: Example smart contract.</figcaption></figure>
+		<p>Transactions occurring as a result of 'BEGIN' and 'END' do not take parameters, and are functions name with 
+			<code>f</code> and a number incrementally starting from 
+			<code>0</code>, e.g., 
+			<code>f0</code>. The functions are defined sequentially in the same order as in the SQL file. An improved naming convention will be provided soon. In the case of the 
+			<code>selects</code> example, 
+			<code>f0</code> coincides with the 
+			<code>INSERT</code> statements on lines 10-13. The functions 
+			<code>f1</code>, 
+			<code>f2</code>, and 
+			<code>f3</code> implement the select statements on lines 15, 16, and 17, respectively.
+			<br/>
+		</p>
+		<p>Convenience methods are also defined to allow inserting a row into each of the table schemas defined.</p>
+		<h1 id="interacting-with-a-sandcastle-smart-contract">Interacting with a Sandcastle smart contract</h1>
+		<p>Let's execute the sequence of transactions defined for the 
+			<code>select</code> example.
+		</p>
+		<p>Click on 
+			<code>f0</code> to execute. The panel and the Remix output console should update with a successful transaction as follows.
+		</p><figure><img src="./tutorial_setup_08.png" width="500" alt="Image showing example Sandcastle smart contract's f0 execution."/><figcaption>Figure: f0 execution.</figcaption></figure>
+		<p>The figure shows that the execution cost is 113470 and the transaction cost is 134742.</p>
+		<p>Clicking on the transaction in the Remix output console will show the transaction's properties. Notice that the transaction's 
+			<code>logs</code> contain the SQL expression that was executed.
+		</p>
+		<p>Now, click on 
+			<code>f1</code> to execute that method.
+		</p><figure><img src="./tutorial_setup_09.png" width="500" alt="Image showing example Sandcastle smart contract's f0 execution, Remix console output."/> <figcaption>Figure: f0 execution in Remix console output.</figcaption></figure>
+		<p>The query output is shown in the decoded output property of the mined transaction. In this case, there is an entry 
+			<code>9</code> in the log table for each insert that was performed.
+		</p><figure><img src="./tutorial_setup_10.png" width="500" alt="Image showing example Sandcastle smart contract's output."/> <figcaption>Figure: Smart contract output of multiple rows (single column).</figcaption></figure>
+		<p>Notice that a query that projects more than one column returns a tuple with multiple elements. The tuple is a sequential array where each row begins at offset 
+			<code>array_index // number_of_columns</code>.
+		</p><figure><img src="./tutorial_setup_11.png" width="500" alt="Image showing example Sandcastle smart contract's output of multiple fields."/><figcaption>Figure: Smart contract output of multiple columns and rows.</figcaption></figure>
+		<h1 id="team">Team</h1>
+		<p>Bugs, questions, feature requests, and feedback can be directed to <a href="mailto:shahan.khatchadourian@consensys.net">Shahan Khatchadourian</a>.</p>
+	</body>
+</html>
