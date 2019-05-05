@@ -15,7 +15,9 @@ Bugs, questions, feature requests, and feedback can be directed to <a href="mail
 
 # PegaSys
 
+<!--
 <a href="https://pegasys.tech/?utm_source=github&utm_medium=source&utm_campaign=sandcastle" rel="nofollow"><img src="https://raw.githubusercontent.com/shahankhatch/sandcastle-tutorial/master/logo.svg?sanitize=true" alt="PegaSys logo" data-canonical-src="https://raw.githubusercontent.com/shahankhatch/sandcastle-tutorial/master/logo.svg?sanitize=true" width="400"></a>
+-->
 
 PegaSys is ConsenSys' protocol engineering group that is building production-ready Enterprise Ethereum platforms for business environments. Our team of builds mainnet and private chain technologies and have diverse backgrounds including cloud services, big data, parallel computing, and applied cryptography.
 
