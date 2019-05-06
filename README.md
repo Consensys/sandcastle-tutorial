@@ -4,8 +4,6 @@ Tutorials for Sandcastle, an SQL Ethereum smart contract language.
 
 [Setup and use Sandcastle](https://github.com/shahankhatch/sandcastle-tutorial/blob/master/tutorial/tutorial_setup.md)
 
-Open the above document then access [remix.ethereum.org](http://remix.ethereum.org)
-
 # Team
 
 Bugs, questions, feature requests, and feedback can be directed to <a href="mailto:shahan.khatchadourian@consensys.net">Shahan Khatchadourian</a>.
