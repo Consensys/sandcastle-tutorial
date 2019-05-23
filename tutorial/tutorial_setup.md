@@ -7,11 +7,12 @@ The following steps lead a user who knows only SQL to write Ethereum smart contr
 Some insights into the reasoning behind our bridging of Ethereum and database technologies can be found in the following articles. 
 
 <a href="https://media.consensys.net/blockchains-and-databases-arent-the-same-thing-yet-5d5eb7df099e" target="new">Blockchains and Databases Aren’t the Same Thing. Yet.</a><br>
-When the Ethereum mainnet reaches block 10 million, they will be. Here’s why.
+
+<a href="https://pegasys.tech/sandcastle-brings-sql-to-ethereum-smart-contracts/" target="new">Sandcastle brings SQL to Ethereum Smart Contracts.</a><br>
 
 # Setup
 
-Go to <http://remix.ethereum.org>, then navigate to the `Settings` panel (on the right side of the Remix web page).
+Go to <http://remix.ethereum.org/#optimize=false&version=soljson-v0.5.2+commit.1df8f40c.js>, then navigate to the `Settings` panel (on the right side of the Remix web page).
 
 Copy the following Sandcastle plugin definition into the text area, then press `Load` to add the Sandcastle plugin button.
 
