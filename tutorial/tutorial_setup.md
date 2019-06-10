@@ -13,7 +13,7 @@ Some insights into the reasoning behind our bridging of Ethereum and database te
 # Setup
 
 Note: remix.ethereum.org provides a newer plugin api than is currently supported by the Sandcastle Remix plugin. 
-Go to <http://remix.ethereum.org/#optimize=false&version=soljson-v0.5.2+commit.1df8f40c.js>, then navigate to the `Settings` panel (on the right side of the Remix web page).
+<!-- Go to <http://remix.ethereum.org/#optimize=false&version=soljson-v0.5.2+commit.1df8f40c.js>, then navigate to the `Settings` panel (on the right side of the Remix web page). -->
 
 Instead, download and launch an earlier release: https://github.com/ethereum/remix-ide/releases/tag/v0.7.7
 
