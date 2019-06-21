@@ -12,7 +12,7 @@ Some insights into the reasoning behind our bridging of Ethereum and database te
 
 # Setup
 
-Go to <http://3.95.3.208:8080/#optimize=false&version=soljson-v0.5.2+commit.1df8f40c.js>, ignore any messages that Remix shows by clicking OK on them.
+Go to our hosted <a href="http://3.95.3.208:8080/#optimize=false&version=soljson-v0.5.2+commit.1df8f40c.js" target="new">Remix IDE</a>, ignore any messages that Remix shows by clicking OK on them.
 Then navigate to the `Settings` panel that appears as a tab on the right side of the Remix web page.
 
 <!-- Note: remix.ethereum.org provides a newer plugin api than is currently supported by the Sandcastle Remix plugin. -->
